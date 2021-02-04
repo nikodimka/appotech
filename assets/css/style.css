@@ -156,6 +156,9 @@ a:hover {
 .header.fixed-top .btn {
   margin-right: 0;
 }
+.header.fixed-top .header-menu__nav {
+  margin: 0 auto;
+}
 @media screen and (max-width: 1199px) {
   .header .btn {
     margin-right: 113px;
