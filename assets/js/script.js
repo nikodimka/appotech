@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
             /*pagination: false,*/
             arrows: false,
             autoplay: true,
-            interval: 3200,
+            interval: 6000,
             breakpoints: {
                 991: {
                     destroy: true,
