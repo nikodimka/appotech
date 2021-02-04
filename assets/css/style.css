@@ -520,6 +520,9 @@ a:hover {
   font-size: 26px;
   margin-bottom: 40px;
 }
+.tarifs-frame__price span {
+    font-family: Lucida Sans Unicode
+}
 .tarifs-frame .btn {
   display: block;
   padding: 20px 0;
