@@ -524,7 +524,8 @@ a:hover {
   margin-bottom: 40px;
 }
 .tarifs-frame__price span {
-    font-family: Lucida Sans Unicode
+    letter-spacing: -0.03em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
 }
 .tarifs-frame .btn {
   display: block;
