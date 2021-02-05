@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // меню бургер и мобильное меню
     let burgerButton = document.getElementById('nav-icon');
     let mainMenu = document.querySelector('.header-menu');
-    let linkMenu = document.querySelectorAll('.header-menu__link');
+    let linkMenu = document.querySelectorAll('.header-menu__link, .header-menu__phone');
     for(let link of linkMenu) {
       link.addEventListener('click', () => {
         mainMenu.classList.remove('active');
@@ -144,11 +144,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     // Hide/Show password
     let btnPass =  document.querySelectorAll('.form-pass svg');
-    /*let passwords = document.querySelectorAll('.form-pass input[type="password"]');*/
     for(let btn of btnPass) {
       btn.addEventListener('click', () => { 
         let password = btn.parentNode.querySelector('input');
-        console.log(password);
         if (password.type === "password") {
             password.type = "text";
             btn.querySelector('use').setAttribute('xlink:href', '#eye-off-outline');
