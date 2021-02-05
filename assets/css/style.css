@@ -142,7 +142,7 @@ a:hover {
 }
 .header .btn {
   position: relative;
-  margin-right: 147px;
+  margin-right: 152px;
   color: #242424;
   padding: 10px 46px;
   background: #fff;
@@ -785,13 +785,9 @@ a:hover {
 
 @media screen and (max-width: 767px) {
     .modal .content-wrapper {
-        padding: 15px;
+        padding: 20px;
         width: 96%;
         margin: 20px auto;
-    }
-    .modal .content-wrapper .close {
-        top: 5px;
-        right: 5px;
     }
 }
 
