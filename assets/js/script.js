@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
             arrows: false,
             autoplay: true,
             interval: 1900,
-            lazyLoad: 'nearby'
+            pauseOnHover: false
         } ).mount();
     });
     // слайдер slider
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
             arrows: false,
             autoplay: true,
             interval: 1200,
-            lazyLoad: 'nearby'
+            pauseOnHover: false
         } ).mount();
     });
     // кнопка подняться наверх
@@ -129,4 +129,35 @@ document.addEventListener("DOMContentLoaded", function() {
             modal.classList.toggle('open');
         });
     }
+    // Валидатор
+    var forms = document.querySelectorAll('.needs-validation')
+
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    });
+    // Hide/Show password
+    let btnPass =  document.querySelectorAll('.form-pass svg');
+    /*let passwords = document.querySelectorAll('.form-pass input[type="password"]');*/
+    for(let btn of btnPass) {
+      btn.addEventListener('click', () => { 
+        let password = btn.parentNode.querySelector('input');
+        console.log(password);
+        if (password.type === "password") {
+            password.type = "text";
+            btn.querySelector('use').setAttribute('xlink:href', '#eye-off-outline');
+        } else {
+            password.type = "password";
+            btn.querySelector('use').setAttribute('xlink:href', '#eye-outline');
+        }
+      });
+    }     
+
 });
+
