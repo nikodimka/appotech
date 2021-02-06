@@ -49,12 +49,12 @@
 	<!-- BEGIN WHATSAPP -->
 	<div class="container whatsapp">
 		<div class="row">
-			<div class="col-lg-7">
+			<div class="col-md-7">
 				<h1 class="whatsapp-title">Сервис для привлечения положительных отзывов</h1>
 				<p class="whatsapp-text">Получайте больше положительных <span class="main-gradient">реальных</span> отзывов от ваших клиентов на карты и маркетплейсы</p>
 				<a href="javascript:void(0);" class="main-gradient btn" data-modal-trigger="trigger-1">Подключить</a>
 			</div>
-			<div class="col-lg-5">
+			<div class="col-md-5">
 				<div id="whatsapp" class="splide">
 					<img src="assets/img/phone.png" class="whatsapp-phone" alt="">
 					<div class="main-gradient whatsapp-phone__bg"></div>
@@ -77,8 +77,9 @@
 	</div>
 	<!-- END WHATSAPP -->
 
-	<!-- BEGIN SLIDER -->
-	<div class="splide slider" id="slider">
+	<!-- BEGIN SLIDER -->	
+	<div class="splide slider">
+		<div class="link-section" id="slider"></div>
 		<div class="splide__track">
 			<div class="splide__list">
 				<div class="p-80 splide__slide yellow">
@@ -158,33 +159,34 @@
 	</div>
 	<!-- END STATISTICS -->
 
-	<!-- BEGIN FEATURES -->
-	<div class="features p-80" id="features">
+	<!-- BEGIN FEATURES -->	
+	<div class="features p-80">
+		<div class="link-section" id="features"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-12 title">Возможности Appotech</div>
-				<div class="col-md-6">
+				<div class="col-lg-6">
 					<div class="features-item">
 						<span class="features-item__num">1</span>
 						<p class="features-item__title">Работа с негативными отзывами</p>
 						<p class="features-item__text">Если клиенту что-то не понравилось, мы не просим оставить отзыв в поисковой платформе, а перенаправляем чат на вашего администратора. Таким образом вы узнаёте о всех негативных ситуациях и удерживаете клиентов.</p>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-lg-6">
 					<div class="features-item">
 						<span class="features-item__num">2</span>
 						<p class="features-item__title">Полный контроль аналитики</p>
 						<p class="features-item__text">Вы всегда можете проконтролировать, как часто переходят ваши клиенты в поисковые платформы. А также раз в месяц мы предоставляем отчёт по факту изменения рейтинга и количества отзывов.</p>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-lg-6">
 					<div class="features-item">
 						<span class="features-item__num">3</span>
 						<p class="features-item__title">Продвижение на крупнейших платформах</p>
 						<p class="features-item__text">Сервис Appotech позволит Вам получать больше отзывов во всех поисковых платформах: Google, Yandex, 2GIS, Tripadvisor, Zoon, ПроДокторов, Booking и любая другая платформа.</p>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-lg-6">
 					<div class="features-item">
 						<span class="features-item__num">4</span>
 						<p class="features-item__title">Интеграция со всеми CRM</p>
@@ -197,7 +199,8 @@
 	<!-- END FEATURES -->
 
   	<!-- BEGIN TARIFS -->
-	<div class="container p-80 tarifs" id="tarifs">
+	<div class="container p-80 tarifs">
+		<div class="link-section" id="tarifs"></div>
 		<div class="row">
 			<p class="col-12 title">Наши тарифы</p>
 			<div class="col-lg-5 col-xl-6">
@@ -255,6 +258,8 @@
 			</form>
 		</article>
 	</div>
+	<!-- END FEEDBACK MODAL -->
+	<!-- BEGIN LOGIN MODAL -->
 	<div class="modal" data-modal="trigger-2">
 		<article class="content-wrapper">
 			<button class="close"></button>
@@ -264,25 +269,67 @@
 				<span><input type="tel" id="inputPhone" name="phone" value="" placeholder="+7 000 000 00 00" class="form-control" required=""></span>
 				<label for="inputPass" class="form-label">Пароль</label>
 				<span class="form-pass">
-					<input type="password" minlength="8" id="inputPass" name="pass" value="" class="form-control" required="" pattern="^(?=.*\d).{8,}$">
+					<input type="password" minlength="8" id="inputPass" name="pass" value="" class="form-control" required="" pattern="^(?=.*\d).{8,}$" placeholder="Введите пароль">
 					<svg><use xlink:href="#eye-outline"></use></svg>
-					<div class="invalid-feedback">Пароль должен содержать минимум 8 латинских символов, одну заглавную букву и цифру</div>
 				</span>	
+				<div class="modal-lostpass"><a href="javascript:void(0);" data-modal-trigger="trigger-4">Забыли пароль?</a></div>
+			    <button type="submit" class="main-gradient btn">Войти</button>
+			    <div class="modal-reg">Если у Вас нет аккаунта, <a href="javascript:void(0);" data-modal-trigger="trigger-3">зарегистрируйтесь</a></div>
+			</form>
+		</article>
+	</div>
 
+	<div class="modal" data-modal="trigger-3">
+		<article class="content-wrapper">
+			<button class="close"></button>
+        	<h4>Регистрация</h4>
+			<form class="needs-validation" novalidate>
+				<label for="inputPhone" class="form-label">Ваш телефон</label>
+				<span><input type="tel" id="inputPhone" name="phone" value="" placeholder="+7 000 000 00 00" class="form-control" required=""></span>
+				<label for="inputPass2" class="form-label">Пароль</label>
+				<span class="form-pass">
+					<input type="password" minlength="8" id="inputPass2" name="pass" value="" class="form-control" required="" pattern="^(?=.*\d).{8,}$" placeholder="Введите пароль">
+					<svg><use xlink:href="#eye-outline"></use></svg>
+					<span class="invalid-feedback">Пароль должен содержать минимум 8 латинских символов, одну заглавную букву и цифру</span>
+				</span>	
 				<div class="form-check">
 					<label class="control control-checkbox">
-						Я соглашаюсь с <a href="#">Политикой конфиденциальности и обработки данных</a>
+						Я соглашаюсь с <a href="javascript:void(0);">Политикой конфиденциальности и обработки данных</a>
 						<input type="checkbox" checked="checked" required>
 						<span class="invalid-feedback">Вы должны согласиться, прежде чем отправлять форму.</span>
 						<span class="control_indicator"></span>
 					</label>
 			    </div>
 			    <button type="submit" class="main-gradient btn">Войти</button>
-			    <div class="text-feedback">Если у Вас нет аккаунта, <a href="#">зарегистрируйтесь</a></div>
+			    <div class="modal-reg">Если у Вас уже есть аккаунт, <a href="javascript:void(0);" data-modal-trigger="trigger-2">войдите</a></div>
 			</form>
 		</article>
 	</div>
-	<!-- END FEEDBACK MODAL -->
+
+	<div class="modal" data-modal="trigger-4">
+		<article class="content-wrapper">
+			<button class="close"></button>
+        	<h4>Смена пароля</h4>
+			<form class="needs-validation" novalidate>
+				<div class="modal-sms">Мы отправили на Ваш номер смс<br> с кодом для смены пароля.</div>
+				<label for="inputSms" class="form-label">Код из смс</label>
+				<span><input type="text" id="inputSms" name="sms" value="" placeholder="Введите код" class="form-control" required=""></span>
+				<label for="inputPass3" class="form-label">Новый пароль</label>
+				<span class="form-pass">
+					<input type="password" minlength="8" id="inputPass3" name="pass" placeholder="Введите пароль" value="" class="form-control" required="" pattern="^(?=.*\d).{8,}$">
+					<svg><use xlink:href="#eye-outline"></use></svg>
+					<span class="invalid-feedback">Пароль должен содержать минимум 8 латинских символов, одну заглавную букву и цифру</span>
+				</span>
+				<label for="inputPass4" class="form-label">Повторите новый пароль</label>
+				<span class="form-pass">
+					<input type="password" minlength="8" id="inputPass4" name="pass2" placeholder="Введите пароль" value="" class="form-control" required="" pattern="^(?=.*\d).{8,}$">
+					<svg><use xlink:href="#eye-outline"></use></svg>
+				</span>
+			    <button type="submit" class="main-gradient btn">Сменить пароль</button>
+			</form>
+		</article>
+	</div>
+	<!-- END LOGIN MODAL -->
 
     <script src="assets/js/vendor.js"></script>
     <script src="assets/js/script.js"></script>

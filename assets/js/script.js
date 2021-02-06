@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
       link.addEventListener('click', () => {
         mainMenu.classList.remove('active');
         burgerButton.classList.remove('open');
+        if (window.matchMedia('screen and (max-width: 991px)').matches) {
+
+        }
       });
     }
     burgerButton.addEventListener('click', () => {
@@ -46,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } ).mount();
     });
     // слайдер slider
-    const sliders = document.querySelectorAll('#slider');
+    const sliders = document.querySelectorAll('.slider');
     sliders.forEach(slider => {
         new Splide( slider, {
             type: 'loop',
@@ -57,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
             autoplay: true,
             interval: 6000,
             breakpoints: {
-                991: {
+                1000: {
                     destroy: true,
                 },
             }
@@ -111,7 +114,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Модальные окна
-    const buttons = document.querySelectorAll('.btn[data-modal-trigger]');
+    const buttons = document.querySelectorAll('[data-modal-trigger]');
+    const modals = document.querySelectorAll('.modal');
     for(let button of buttons) {
         modalEvent(button);
     }
@@ -121,6 +125,13 @@ document.addEventListener("DOMContentLoaded", function() {
             const modal = document.querySelector(`[data-modal=${trigger}]`);
             const contentWrapper = modal.querySelector('.content-wrapper');
             const close = modal.querySelector('.close');
+
+            [].forEach.call(modals, function(modal) {            
+                if ( modal.classList.contains('open') ) {
+                    console.log('h');
+                    modal.classList.remove('open');
+                }
+            });
 
             close.addEventListener('click', () => modal.classList.remove('open'));
             modal.addEventListener('click', () => modal.classList.remove('open'));
@@ -156,6 +167,27 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
     }     
+    // выделить меню при скроле
+    /*const scrollSpy = () => {
+        const targets = document.querySelectorAll('.link-section');
+        const options = {
+          threshold: 0.2,
+        };
 
+        if ('IntersectionObserver' in window) {
+          const inView = target => {
+            const interSecObs = new IntersectionObserver(entries => {
+              entries.forEach(entry => {
+                const elem = entry.target;
+                const currentNav = document.querySelector(`.header-menu__link[href='#${elem.id}']`);
+                currentNav?.classList.toggle('active', entry.isIntersecting);
+              })
+            }, options);
+            interSecObs.observe(target)
+          };
+          targets.forEach(inView);
+
+        }
+    };
+    scrollSpy();*/
 });
-
